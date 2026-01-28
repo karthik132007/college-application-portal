@@ -1,0 +1,26 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Backend for college website",
+  "homepage": "https://github.com/karthik132007/college-application-portal#readme",
+  "bugs": {
+    "url": "https://github.com/karthik132007/college-application-portal/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karthik132007/college-application-portal.git"
+  },
+  "license": "ISC",
+  "author": "Karthikeya",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "mongoose": "^9.1.5"
+  }
+}
