@@ -17,10 +17,10 @@
         <header class="nav">
             <div class="container nav-inner">
                 <div class="brand">
-                    <div class="brand-mark">AU</div>
+                    <img src="/Frontend/Resources/logo.webp" alt="Aditya University" class="brand-logo">
                     <div>
-                        <div>Aditya University</div>
-                        <small>Admissions & student onboarding</small>
+                        <div></div>
+                        <small></small>
                     </div>
                 </div>
                 <nav class="nav-links">
@@ -76,16 +76,33 @@
                                 <span>Confirm password</span>
                                 <input type="password" name="confirmPassword" placeholder="Re-enter password" required />
                             </label>
-                            <label class="field" style="flex: 1; min-width: 220px;">
-                                <span>Preferred intake</span>
-                                <input type="text" name="intake" placeholder="2026" required />
-                            </label>
                         </div>
 
-                        <label class="field">
-                            <span>Program of interest</span>
-                            <input type="text" name="interest" placeholder="B.Tech Computer Science" required />
-                        </label>
+                        <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+                            <label class="field" style="flex: 1; min-width: 220px;">
+                                <span>Select Stream</span>
+                                <select id="streamSelect" name="stream" required>
+                                    <option value="">-- Select Stream --</option>
+                                    <option value="btech">B.Tech</option>
+                                    <option value="bba">BBA</option>
+                                    <option value="bsc">B.Sc</option>
+                                    <option value="bca">BCA</option>
+                                    <option value="pharmacy">Pharmacy</option>
+                                    <option value="mtech">M.Tech</option>
+                                    <option value="mba">MBA</option>
+                                    <option value="mca">MCA</option>
+                                    <option value="msc">M.Sc</option>
+                                    <option value="phd">Ph.D</option>
+                                </select>
+                            </label>
+
+                            <label class="field" style="flex: 1; min-width: 220px;">
+                                <span>Select Program</span>
+                                <select id="programSelect" name="program" required disabled>
+                                    <option value="">-- First select a stream --</option>
+                                </select>
+                            </label>
+                        </div>
 
                         <div class="row" style="justify-content: space-between;">
                             <label class="row" style="gap: 10px;">
@@ -110,7 +127,7 @@
             <div class="container footer-grid">
                 <div>
                     <div class="brand">
-                        <div class="brand-mark">AU</div>
+                        <img src="/Frontend/Resources/logo.webp" alt="Aditya University" class="brand-logo">
                         <div>
                             <div>Aditya University</div>
                             <small>Admissions Portal</small>

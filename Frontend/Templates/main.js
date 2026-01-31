@@ -151,4 +151,144 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
+
+    // Stream and Program Selection Dropdown Logic
+    const programsByStream = {
+        btech: [
+            'Computer Science & Engineering',
+            'Artificial Intelligence & Machine Learning',
+            'CSE (Data Science)',
+            'Electronics & Communication Engineering',
+            'Electrical & Electronics Engineering',
+            'Civil Engineering',
+            'Mechanical Engineering',
+            'Petroleum Technology',
+            'Agricultural Engineering',
+            'Mining Engineering',
+            'CSE in association with SAP',
+            'CSE in association with Google Cloud',
+            'AIML in association with Microsoft',
+            'AIML in association with Google Cloud',
+            'CSE (Data Science) in association with Google Cloud'
+        ],
+        bba: [
+            'BBA in association with Deloitte',
+            'BBA (Business Analytics) in association with KPMG',
+            'BBA (Global Finance) in association with PWC',
+            'BBA (FinTech) in association with EY',
+            'BBA (FinTech) in association with Red Varsity'
+        ],
+        bsc: [
+            'Forensic Science',
+            'Cyber Security & Digital Forensics'
+        ],
+        bca: [
+            'Bachelor of Computer Applications'
+        ],
+        pharmacy: [
+            'B.Pharmacy',
+            'Pharma-D',
+            'M.Pharmacy - Pharmaceutics',
+            'M.Pharmacy - Pharmaceutical Analysis'
+        ],
+        mtech: [
+            'Structural Engineering',
+            'Valuation in Real Estate and Buildings',
+            'Power Electronics & Drives',
+            'Energy Science & Technology',
+            'VLSI Design',
+            'CSE (AI&ML)',
+            'Computer Science & Engineering',
+            'Artificial Intelligence & Data Science',
+            'Mining Engineering (Research)'
+        ],
+        mba: [
+            'MBA in association with Deloitte',
+            'MBA (Business Analytics) in association with KPMG',
+            'MBA (Global Finance) in association with PWC',
+            'MBA (FinTech) in association with EY',
+            'MBA (Health Care Management) in association with Red Varsity',
+            'MBA for Working Professionals'
+        ],
+        mca: [
+            'Master of Computer Applications'
+        ],
+        msc: [
+            'Forensic Science',
+            'Cyber Security & Digital Forensics'
+        ],
+        phd: [
+            'Civil Engineering',
+            'Electrical & Electronics Engineering',
+            'Mechanical Engineering',
+            'Electronics & Communication Engineering',
+            'Computer Science & Engineering',
+            'Petroleum Engineering',
+            'Mining Engineering',
+            'Agricultural Engineering',
+            'Mathematics',
+            'Physics',
+            'Chemistry',
+            'English',
+            'Management',
+            'Pharmaceutical Sciences'
+        ]
+    };
+
+    const streamSelect = document.getElementById('streamSelect');
+    const programSelect = document.getElementById('programSelect');
+
+    if (streamSelect && programSelect) {
+        streamSelect.addEventListener('change', function() {
+            const selectedStream = this.value;
+            programSelect.innerHTML = '<option value="">-- Select Program --</option>';
+            
+            if (selectedStream && programsByStream[selectedStream]) {
+                programSelect.disabled = false;
+                programsByStream[selectedStream].forEach(program => {
+                    const option = document.createElement('option');
+                    option.value = program;
+                    option.textContent = program;
+                    programSelect.appendChild(option);
+                });
+            } else {
+                programSelect.disabled = true;
+                programSelect.innerHTML = '<option value="">-- First select a stream --</option>';
+            }
+        });
+
+        // Reset program select when form is reset
+        const form = streamSelect.closest('form');
+        if (form) {
+            form.addEventListener('reset', function() {
+                setTimeout(() => {
+                    programSelect.disabled = true;
+                    programSelect.innerHTML = '<option value="">-- First select a stream --</option>';
+                }, 0);
+            });
+        }
+    }
+
+    // Hostel Service Toggle
+    const hostelYes = document.getElementById('hostelYes');
+    const hostelNo = document.getElementById('hostelNo');
+    const hostelOptions = document.getElementById('hostelOptions');
+    const hostelTypeSelect = document.getElementById('hostelTypeSelect');
+
+    if (hostelYes && hostelNo && hostelOptions) {
+        hostelYes.addEventListener('change', function() {
+            if (this.checked) {
+                hostelOptions.style.display = 'block';
+                hostelTypeSelect.required = true;
+            }
+        });
+
+        hostelNo.addEventListener('change', function() {
+            if (this.checked) {
+                hostelOptions.style.display = 'none';
+                hostelTypeSelect.required = false;
+                hostelTypeSelect.value = '';
+            }
+        });
+    }
 });

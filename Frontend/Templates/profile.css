@@ -1,5 +1,11 @@
 /* Create profile page styles */
 
+.brand-logo {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+}
+
 .profile {
     display: grid;
     gap: 28px;
@@ -44,7 +50,25 @@
     font: inherit;
 }
 
-.field input:focus-visible {
+.field select {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background: #ffffff;
+    box-shadow: var(--shadow-sm);
+    font: inherit;
+    cursor: pointer;
+}
+
+.field select:disabled {
+    background: #f8fafc;
+    color: #94a3b8;
+    cursor: not-allowed;
+}
+
+.field input:focus-visible,
+.field select:focus-visible {
     outline: 3px solid var(--ring);
     outline-offset: 2px;
 }

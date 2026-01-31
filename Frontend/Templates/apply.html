@@ -12,14 +12,18 @@
 		/>
 		<link rel="stylesheet" href="styles.css" />
 		<link rel="stylesheet" href="appllycss.css" />
+		<script src="main.js" defer></script>
 	</head>
 	<body>
 		<header class="nav">
 			<div class="container nav-inner">
 				<div class="brand">
-					<div class="brand-mark">AU</div>
+					<div class="brand-mark">
+						<img src="/Frontend/Resources/logo.webp" alt="Aditya University" class="brand-logo">
+
+					</div>
 					<div>
-						<div>Aditya University</div>
+						<div></div>
 						<small>Admissions & student onboarding</small>
 					</div>
 				</div>
@@ -122,23 +126,65 @@
 
 						<div class="row">
 							<label class="field" style="flex: 1; min-width: 260px;">
-								<span>Level</span>
-								<input type="text" name="level" placeholder="UG / PG / Research" required />
+								<span>Select Stream</span>
+								<select id="streamSelect" name="stream" required>
+									<option value="">-- Select Stream --</option>
+									<option value="btech">B.Tech</option>
+									<option value="bba">BBA</option>
+									<option value="bsc">B.Sc</option>
+									<option value="bca">BCA</option>
+									<option value="pharmacy">Pharmacy</option>
+									<option value="mtech">M.Tech</option>
+									<option value="mba">MBA</option>
+									<option value="mca">MCA</option>
+									<option value="msc">M.Sc</option>
+									<option value="phd">Ph.D</option>
+								</select>
 							</label>
 							<label class="field" style="flex: 1; min-width: 260px;">
-								<span>Program</span>
-								<input type="text" name="program" placeholder="B.Tech Computer Science" required />
+								<span>Select Program</span>
+								<select id="programSelect" name="program" required disabled>
+									<option value="">-- First select a stream --</option>
+								</select>
 							</label>
 						</div>
 
 						<div class="row">
-							<label class="field" style="flex: 1; min-width: 220px;">
+							<!-- <label class="field" style="flex: 1; min-width: 220px;">
 								<span>Preferred campus</span>
 								<input type="text" name="campus" placeholder="Main campus" />
-							</label>
-							<label class="field" style="flex: 1; min-width: 220px;">
+							</label> -->
+							<!-- <label class="field" style="flex: 1; min-width: 220px;">
 								<span>Intake</span>
 								<input type="text" name="intake" placeholder="2026" required />
+							</label> -->
+						</div>
+
+						<div class="row">
+							<label class="field" style="flex: 1;">
+								<span>Do you need hostel service?</span>
+								<div style="display: flex; gap: 20px; padding-top: 8px;">
+									<label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+										<input type="radio" id="hostelYes" name="hostelService" value="yes" style="width: auto; margin: 0;">
+										<span style="font-weight: normal;">Yes</span>
+									</label>
+									<label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+										<input type="radio" id="hostelNo" name="hostelService" value="no" checked style="width: auto; margin: 0;">
+										<span style="font-weight: normal;">No</span>
+									</label>
+								</div>
+							</label>
+						</div>
+
+						<div id="hostelOptions" style="display: none;">
+							<label class="field">
+								<span>Select Hostel Type</span>
+								<select name="hostelType" id="hostelTypeSelect">
+									<option value="">-- Select Hostel Type --</option>
+									<option value="3-sharing-ac">3 Sharing AC - ₹1,00,000 per year</option>
+									<option value="3-sharing-nonac">3 Sharing Non-AC - ₹70,000 per year</option>
+									<option value="4-sharing-nonac">4 Sharing Non-AC - ₹50,000 per year</option>
+								</select>
 							</label>
 						</div>
 
@@ -148,11 +194,13 @@
 							<h3 class="panel-title">Academic history</h3>
 							<span class="pill warn">Step 3 of 4</span>
 						</div>
-
+						<div class="panel-head">
+							<h5 class="panel-title">Class 12 details</h6>
+						</div>
 						<div class="row">
 							<label class="field" style="flex: 1; min-width: 260px;">
-								<span>Highest qualification</span>
-								<input type="text" name="qualification" placeholder="Class 12 / Bachelor’s" required />
+								<span>College name</span>
+								<input type="text" name="College" placeholder="Class 12 College Name" required />
 							</label>
 							<label class="field" style="flex: 1; min-width: 220px;">
 								<span>Board / University</span>
@@ -172,7 +220,7 @@
 						</div>
 
 						<div class="panel-head">
-							<h4 class="panel-title">Class 10 details</h4>
+							<h5 class="panel-title">Class 10 details</h6>
 						</div>
 
 						<div class="row">
@@ -236,34 +284,31 @@
 		</main>
 
 		<footer class="footer">
-			<div class="container footer-grid">
-				<div>
-					<div class="brand">
-						<div class="brand-mark">AU</div>
-						<div>
-							<div>Aditya University</div>
-							<small>Admissions Portal</small>
-						</div>
-					</div>
-				</div>
-				<div>
-					<h5>Admissions</h5>
-					<a href="index.html#programs">Programs</a>
-					<a href="index.html#deadlines">Deadlines</a>
-					<a href="index.html#help">Support</a>
-				</div>
-				<div>
-					<h5>Support</h5>
-					<a href="index.html#faq">FAQ</a>
-					<a href="index.html#help">Contact us</a>
-				</div>
-				<div>
-					<h5>Legal</h5>
-					<a href="#">Privacy policy</a>
-					<a href="#">Terms of service</a>
-				</div>
-			</div>
-			<div class="container footer-note" aria-live="polite"></div>
-		</footer>
+            <div class="container footer-grid">
+                <div>
+                    <div class="brand">
+                        <img src="/Frontend/Resources/logo.webp" alt="Aditya University" class="brand-logo">
+                        
+                    </div>
+                </div>
+                <div>
+                    <h5>Admissions</h5>
+                    <a href="index.html#programs">Programs</a>
+                    <a href="index.html#deadlines">Deadlines</a>
+                    <a href="apply.html">Apply</a>
+                </div>
+                <div>
+                    <h5>Support</h5>
+                    <a href="index.html#faq">FAQ</a>
+                    <a href="index.html#help">Contact us</a>
+                </div>
+                <div>
+                    <h5>Legal</h5>
+                    <a href="#">Privacy policy</a>
+                    <a href="#">Terms of service</a>
+                </div>
+            </div>
+            <div class="container footer-note" aria-live="polite"></div>
+        </footer>
 	</body>
 </html>
