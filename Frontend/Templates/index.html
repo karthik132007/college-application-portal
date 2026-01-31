@@ -7,99 +7,383 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;600;700&display=swap"
             rel="stylesheet"
         />
         <link rel="stylesheet" href="styles.css" />
     </head>
     <body>
+        
         <header class="nav">
             <div class="container nav-inner">
                 <div class="brand">
-                    <div class="brand-mark">AU</div>
-                    <div>
-                        <div>Aditya University</div>
-                        <small>Admissions & student onboarding</small>
+                    <div class="brand-mark">
+                        <img src="/Frontend/Resources/logo.webp" alt="Aditya University Logo" />
+                    </div>
+                    <div class="brand-info">
+                        
+                        <small class="brand-subtitle">Admissions & Student Portal</small>
                     </div>
                 </div>
                 <nav class="nav-links">
-                    <a href="#portal">Portal</a>
-                    <a href="#deadlines">Deadlines</a>
-                    <a href="#programs">Programs</a>
-                    <a href="#campus">Campus</a>
-                    <a href="#help">Help</a>
+                    <div class="dropdown">
+                        <a href="#about">About Us</a>
+                        <div class="dropdown-content">
+                            <a href="#vision">Vision & Mission</a>
+                            <a href="#administration">Administration</a>
+                            <a href="#accreditation">Accreditation</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <a href="#programs">Academics</a>
+                        <div class="dropdown-content">
+                            <a href="#ug">UG Programs</a>
+                            <a href="#pg">PG Programs</a>
+                            <a href="#phd">Ph.D Programs</a>
+                        </div>
+                    </div>
+                    <a href="#admissions">Admissions</a>
+                    <a href="#campus">Campus Life</a>
+                    <a href="#placements">Placements</a>
+                    <a href="#help">Contact</a>
                 </nav>
                 <div class="nav-actions">
-                    <a class="button ghost" href="Sdash.html">Applicant login</a>
-                    <a class="button primary" href="profile.html">Start application</a>
+                    <a class="button secondary" href="Sdash.html">Student Login</a>
+                    <a class="button primary" href="profile.html">Apply Now</a>
                 </div>
             </div>
         </header>
 
         <main>
+            <!-- Marquee for Important Announcements -->
+            <div class="marquee-container">
+                <div class="marquee">
+                    <span class="marquee-text">
+                        🔔 <strong>IMPORTANT:</strong> Last date for admissions: March 10, 2026 | 
+                        Entrance exam dates announced: Feb 15-20, 2026 | 
+                        Scholarship applications open for meritorious students | 
+                        Virtual campus tour available on request
+                    </span>
+                </div>
+            </div>
+
             <section class="hero-bleed" id="portal">
                 <div class="hero-bg" aria-hidden="true" data-bg-slider data-autoplay="true">
                     <img
-                            src="/Resources/pexels-saad-bin-hasan-2157243757-35486996.jpg"
+                            src="/Frontend/Resources/pexels-saad-bin-hasan-2157243757-35486996.jpg"
                             alt=""
                             loading="lazy"
                         />
                     <img
-                            src="/Resources/pexels-davegarcia-31085763.jpg"
+                            src="/Frontend/Resources/pexels-davegarcia-31085763.jpg"
                             alt=""
                             loading="lazy"
                         />
                     <img
-                            src="/Resources/pexels-olia-danilevich-8093017.jpg"
+                            src="/Frontend/Resources/pexels-olia-danilevich-8093017.jpg"
                             alt=""
                             loading="lazy"
                         />
                     <img
-                            src="/Resources/pexels-mika-photogenius-641920605-30408777.jpg"
+                            src="/Frontend/Resources/pexels-mika-photogenius-641920605-30408777.jpg"
                             alt=""
                             loading="lazy"
                         />
                     </div>
+                <div class="hero-overlay"></div>
                 <div class="container hero-content">
-                    <span class="hero-eyebrow">2026 admissions open • Applications close March 10</span>
-                    <h1>Admissions Portal</h1>
-                    <p class="lead">
-                        Apply, upload documents, and track your application status — all in one place.
-                    </p>
-                    <div class="hero-actions">
-                        <a class="button primary" href="profile.html">Create applicant profile</a>
-                        <a class="button ghost" href="#campus">Explore campus</a>
+                    <div class="hero-main">
+                        <div class="hero-tag">Admissions Open (2026-27)</div>
+                        <h1 class="hero-title">
+                            Welcome to<br>
+                            <span class="hero-highlight">Aditya University</span>
+                        </h1>
+                        <p class="hero-description">
+                            Our university has become a leader in engineering education, research, and technology. 
+                            Aditya offers a dynamic learning environment that fosters intellectual growth, creativity, 
+                            and the drive to address real-world challenges.
+                        </p>
+                        <div class="hero-actions">
+                            <a class="button primary-cta" href="profile.html">
+                                APPLY NOW
+                            </a>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <section class="container" id="programs">
-                <h2 class="section-title">Find your program</h2>
-                <p class="section-subtitle">
-                    Choose the path that fits you — undergraduate, postgraduate, and research programs
-                    across arts, sciences, engineering, and management.
-                </p>
-                <div class="card-grid">
-                    <article class="info-card">
-                        <div class="badge">UG</div>
-                        <h4>Engineering</h4>
-                        <p>Computer Science, AI, ECE, Mechanical — labs, projects, and internships.</p>
-                    </article>
-                    <article class="info-card">
-                        <div class="badge">UG / PG</div>
-                        <h4>Life Sciences</h4>
-                        <p>Biotech, Microbiology, Public Health — research support and mentorship.</p>
-                    </article>
-                    <article class="info-card">
-                        <div class="badge">PG</div>
-                        <h4>Business</h4>
-                        <p>MBA, Finance, Marketing — industry exposure and career guidance.</p>
-                    </article>
-                    <article class="info-card">
-                        <div class="badge">UG</div>
-                        <h4>Arts & Humanities</h4>
-                        <p>Psychology, Communication, Design — studio learning and student clubs.</p>
-                    </article>
+            <!-- Programs Offered Section -->
+            <section class="programs-offered" id="programs">
+                <div class="container">
+                    <h2 class="section-title">Programs Offered</h2>
+                    <p class="section-subtitle">Choose from our wide range of industry-aligned programs</p>
+                    
+                    <div class="programs-tabs">
+                        <button class="program-tab active" data-program="btech">B.Tech</button>
+                        <button class="program-tab" data-program="bba">BBA</button>
+                        <button class="program-tab" data-program="bsc">B.Sc</button>
+                        <button class="program-tab" data-program="bca">BCA</button>
+                        <button class="program-tab" data-program="pharmacy">Pharmacy</button>
+                        <button class="program-tab" data-program="mtech">M.Tech</button>
+                        <button class="program-tab" data-program="mba">MBA</button>
+                        <button class="program-tab" data-program="mca">MCA</button>
+                        <button class="program-tab" data-program="msc">M.Sc</button>
+                        <button class="program-tab" data-program="phd">Ph.D</button>
+                    </div>
+
+                    <div class="programs-content">
+                        <!-- B.Tech Programs -->
+                        <div class="program-list active" data-program-content="btech">
+                            <h3 class="program-category-title">B.Tech Programs</h3>
+                            <ul class="program-text-list">
+                                <li>Computer Science & Engineering</li>
+                                <li>Artificial Intelligence & Machine Learning</li>
+                                <li>CSE (Data Science)</li>
+                                <li>Electronics & Communication Engineering</li>
+                                <li>Electrical & Electronics Engineering</li>
+                                <li>Civil Engineering</li>
+                                <li>Mechanical Engineering</li>
+                                <li>Petroleum Technology</li>
+                                <li>Agricultural Engineering</li>
+                                <li>Mining Engineering</li>
+                                <li>CSE in association with SAP</li>
+                                <li>CSE in association with Google Cloud</li>
+                                <li>AIML in association with Microsoft</li>
+                                <li>AIML in association with Google Cloud</li>
+                                <li>CSE (Data Science) in association with Google Cloud</li>
+                            </ul>
+                        </div>
+
+                        <!-- BBA Programs -->
+                        <div class="program-list" data-program-content="bba">
+                            <h3 class="program-category-title">BBA Programs</h3>
+                            <ul class="program-text-list">
+                                <li>BBA in association with Deloitte</li>
+                                <li>BBA (Business Analytics) in association with KPMG</li>
+                                <li>BBA (Global Finance) in association with PWC</li>
+                                <li>BBA (FinTech) in association with EY</li>
+                                <li>BBA (FinTech) in association with Red Varsity</li>
+                            </ul>
+                        </div>
+
+                        <!-- B.Sc Programs -->
+                        <div class="program-list" data-program-content="bsc">
+                            <h3 class="program-category-title">B.Sc Programs</h3>
+                            <ul class="program-text-list">
+                                <li>Forensic Science</li>
+                                <li>Cyber Security & Digital Forensics</li>
+                            </ul>
+                        </div>
+
+                        <!-- BCA Programs -->
+                        <div class="program-list" data-program-content="bca">
+                            <h3 class="program-category-title">BCA Programs</h3>
+                            <ul class="program-text-list">
+                                <li>Bachelor of Computer Applications</li>
+                            </ul>
+                        </div>
+
+                        <!-- Pharmacy Programs -->
+                        <div class="program-list" data-program-content="pharmacy">
+                            <h3 class="program-category-title">Pharmacy Programs</h3>
+                            <ul class="program-text-list">
+                                <li>B.Pharmacy</li>
+                                <li>Pharma-D</li>
+                                <li>M.Pharmacy - Pharmaceutics</li>
+                                <li>M.Pharmacy - Pharmaceutical Analysis</li>
+                            </ul>
+                        </div>
+
+                        <!-- M.Tech Programs -->
+                        <div class="program-list" data-program-content="mtech">
+                            <h3 class="program-category-title">M.Tech Programs</h3>
+                            <ul class="program-text-list">
+                                <li>Structural Engineering</li>
+                                <li>Valuation in Real Estate and Buildings</li>
+                                <li>Power Electronics & Drives</li>
+                                <li>Energy Science & Technology</li>
+                                <li>VLSI Design</li>
+                                <li>CSE (AI&ML)</li>
+                                <li>Computer Science & Engineering</li>
+                                <li>Artificial Intelligence & Data Science</li>
+                                <li>Mining Engineering (Research)</li>
+                            </ul>
+                        </div>
+
+                        <!-- MBA Programs -->
+                        <div class="program-list" data-program-content="mba">
+                            <h3 class="program-category-title">MBA Programs</h3>
+                            <ul class="program-text-list">
+                                <li>MBA in association with Deloitte</li>
+                                <li>MBA (Business Analytics) in association with KPMG</li>
+                                <li>MBA (Global Finance) in association with PWC</li>
+                                <li>MBA (FinTech) in association with EY</li>
+                                <li>MBA (Health Care Management) in association with Red Varsity</li>
+                                <li>MBA for Working Professionals</li>
+                            </ul>
+                        </div>
+
+                        <!-- MCA Programs -->
+                        <div class="program-list" data-program-content="mca">
+                            <h3 class="program-category-title">MCA Programs</h3>
+                            <ul class="program-text-list">
+                                <li>Master of Computer Applications</li>
+                            </ul>
+                        </div>
+
+                        <!-- M.Sc Programs -->
+                        <div class="program-list" data-program-content="msc">
+                            <h3 class="program-category-title">M.Sc Programs</h3>
+                            <ul class="program-text-list">
+                                <li>Forensic Science</li>
+                                <li>Cyber Security & Digital Forensics</li>
+                            </ul>
+                        </div>
+
+                        <!-- Ph.D Programs -->
+                        <div class="program-list" data-program-content="phd">
+                            <h3 class="program-category-title">Ph.D Programs</h3>
+                            <ul class="program-text-list">
+                                <li>Civil Engineering</li>
+                                <li>Electrical & Electronics Engineering</li>
+                                <li>Mechanical Engineering</li>
+                                <li>Electronics & Communication Engineering</li>
+                                <li>Computer Science & Engineering</li>
+                                <li>Petroleum Engineering</li>
+                                <li>Mining Engineering</li>
+                                <li>Agricultural Engineering</li>
+                                <li>Mathematics</li>
+                                <li>Physics</li>
+                                <li>Chemistry</li>
+                                <li>English</li>
+                                <li>Management</li>
+                                <li>Pharmaceutical Sciences</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Placements Stats Section -->
+            <section class="placements-section" id="placements">
+                <div class="container">
+                    <h2 class="section-title">Placement Statistics</h2>
+                    <p class="section-subtitle">Exceptional placement record with top companies across industries</p>
+                    
+                    <div class="placements-stats-container">
+                        <div class="stat-card">
+                            <div class="stat-icon"></div>
+                            <div class="stat-content">
+                                <div class="stat-number">35.36 LPA</div>
+                                <div class="stat-text">Highest Package</div>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">💼</div>
+                            <div class="stat-content">
+                                <div class="stat-number">4.11 LPA</div>
+                                <div class="stat-text">Average Package</div>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">🎓</div>
+                            <div class="stat-content">
+                                <div class="stat-number">3024+</div>
+                                <div class="stat-text">Students Placed</div>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">🏢</div>
+                            <div class="stat-content">
+                                <div class="stat-number">260+</div>
+                                <div class="stat-text">Companies</div>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">✅</div>
+                            <div class="stat-content">
+                                <div class="stat-number">100%</div>
+                                <div class="stat-text">Placement Assistance</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="recruiters-list">
+                        <h3>Top Recruiters</h3>
+                        <p>Accenture • Wipro • TCS • Infosys • Cognizant • HCL • Tech Mahindra • Capgemini • Amazon • Microsoft • Google • IBM • Oracle • Deloitte • KPMG</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Notice Board Section -->
+            <section class="notice-board">
+                <div class="container">
+                    <div class="notice-grid">
+                        <div class="notice-main">
+                            <div class="notice-header">
+                                <h3>📢 Latest Announcements</h3>
+                                <a href="#" class="view-all">View All →</a>
+                            </div>
+                            <div class="notice-list">
+                                <div class="notice-item new">
+                                    <span class="notice-date">Jan 30, 2026</span>
+                                    <h4>Admissions 2026-27: Online Application Portal Open</h4>
+                                    <p>Online applications are invited for UG, PG, and Ph.D programs. Last date: March 10, 2026</p>
+                                </div>
+                                <div class="notice-item">
+                                    <span class="notice-date">Jan 28, 2026</span>
+                                    <h4>Entrance Examination Schedule Released</h4>
+                                    <p>University Entrance Test will be conducted from Feb 15-20, 2026. Hall tickets available from Feb 10.</p>
+                                </div>
+                                <div class="notice-item">
+                                    <span class="notice-date">Jan 25, 2026</span>
+                                    <h4>Merit Scholarship Scheme Announced</h4>
+                                    <p>Up to 100% fee waiver for meritorious students. Check eligibility criteria.</p>
+                                </div>
+                                <div class="notice-item">
+                                    <span class="notice-date">Jan 20, 2026</span>
+                                    <h4>Campus Placement Drive - 250+ Companies Registered</h4>
+                                    <p>Record placement season with top recruiters including TCS, Infosys, Wipro, and more.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="quick-links-sidebar">
+                            <div class="sidebar-section">
+                                <h4>🔗 Quick Links</h4>
+                                <a href="profile.html">Online Application</a>
+                                <a href="Sdash.html">Applicant Login</a>
+                                <a href="#programs">Programs Offered</a>
+                                <a href="#deadlines">Important Dates</a>
+                                <a href="#">Fee Structure</a>
+                                <a href="#">Prospectus PDF</a>
+                                <a href="#">Scholarship Info</a>
+                                <a href="#">Hostel Facilities</a>
+                            </div>
+                            <div class="sidebar-section stats-box">
+                                <h4>📊 At a Glance</h4>
+                                <div class="stat-item">
+                                    <strong>35+</strong>
+                                    <span>Years of Excellence</span>
+                                </div>
+                                <div class="stat-item">
+                                    <strong>15,000+</strong>
+                                    <span>Students</span>
+                                </div>
+                                <div class="stat-item">
+                                    <strong>500+</strong>
+                                    <span>Faculty Members</span>
+                                </div>
+                                <div class="stat-item">
+                                    <strong>95%</strong>
+                                    <span>Placement Rate</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -141,94 +425,182 @@
                 </div>
             </section>
 
-            <section class="container" id="campus">
-                <h2 class="section-title">Life at Aditya University</h2>
-                <p class="section-subtitle">
-                    Experience vibrant campus life with housing, clubs, scholarships, and career
-                    services.
-                </p>
-                <div class="gallery">
-                    <img
-                        src="/Resources/pexels-davegarcia-31085763.jpg"
-                        alt="Campus view"
-                        loading="lazy"
-                    />
-                    <img
-                        src="/Resources/pexels-olia-danilevich-8093017.jpg"
-                        alt="Student study area"
-                        loading="lazy"
-                    />
-                    <img
-                        src="/Resources/pexels-saad-bin-hasan-2157243757-35486996.jpg"
-                        alt="University building"
-                        loading="lazy"
-                    />
-                </div>
-                <div class="card-grid">
-                    <article class="info-card">
-                        <h4>Hostels & housing</h4>
-                        <p>Safe, comfortable accommodation options with modern facilities.</p>
-                    </article>
-                    <article class="info-card">
-                        <h4>Scholarships</h4>
-                        <p>Merit and need-based scholarships to support your education.</p>
-                    </article>
-                    <article class="info-card">
-                        <h4>Career services</h4>
-                        <p>Placement support, internships, and industry mentoring.</p>
-                    </article>
+            <!-- Campus Life & Facilities Section -->
+            <section class="campus-section" id="campus">
+                <div class="container">
+                    <h2 class="section-title">Campus Life & Facilities</h2>
+                    <p class="section-subtitle">
+                        300 Acres of Green Campus | World-Class Infrastructure | 24x7 Security
+                    </p>
+                    
+                    <div class="campus-gallery">
+                        <img
+                            src="/Resources/pexels-davegarcia-31085763.jpg"
+                            alt="Campus view"
+                            loading="lazy"
+                        />
+                        <img
+                            src="/Resources/pexels-olia-danilevich-8093017.jpg"
+                            alt="Student study area"
+                            loading="lazy"
+                        />
+                        <img
+                            src="/Resources/pexels-saad-bin-hasan-2157243757-35486996.jpg"
+                            alt="University building"
+                            loading="lazy"
+                        />
+                    </div>
+                    
+                    <div class="facilities-list">
+                        <div class="facilities-column">
+                            <ul>
+                                <li><strong>Boys & Girls Hostels:</strong> Air-conditioned hostels with mess, WiFi, and 24x7 security</li>
+                                <li><strong>Library:</strong> Central library with 50,000+ books, e-journals, and digital resources</li>
+                                <li><strong>Sports Complex:</strong> Cricket, football, basketball, volleyball, and gymnasium facilities</li>
+                                <li><strong>Medical Center:</strong> 24x7 medical facility with qualified doctors and ambulance service</li>
+                                <li><strong>Wi-Fi Campus:</strong> High-speed internet connectivity across entire campus</li>
+                                <li><strong>Cafeteria:</strong> Hygienic food court with multiple cuisine options</li>
+                            </ul>
+                        </div>
+                        <div class="facilities-column">
+                            <ul>
+                                <li><strong>Placement Cell:</strong> Dedicated T&P Cell with 95% placement record</li>
+                                <li><strong>Transport:</strong> University buses from all major locations within 50 km</li>
+                                <li><strong>Laboratories:</strong> State-of-the-art labs with modern equipment</li>
+                                <li><strong>Scholarships:</strong> Merit-based scholarships and financial aid available</li>
+                                <li><strong>Auditorium:</strong> Modern halls with audio-visual facilities for events</li>
+                                <li><strong>Student Clubs:</strong> Cultural, technical, and sports clubs for students</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </section>
 
             <section class="container">
-                <h2 class="section-title">Student stories</h2>
-                <div class="card-grid">
+                <h2 class="section-title">💬 Student Testimonials</h2>
+                <div class="card-grid testimonial-grid">
                     <div class="testimonial">
+                        <div class="quote-mark">❝</div>
                         <p>
-                            “The Aditya University portal was easy to use. The checklist kept me on
-                            track and I received timely updates.”
+                            "The faculty at Aditya University is highly qualified and supportive. The practical exposure through labs and projects prepared me well for my career. Got placed in TCS with a great package!"
                         </p>
-                        <strong>— Priya S., B.Tech 2026</strong>
+                        <div class="testimonial-author">
+                            <strong>— Priya Sharma</strong>
+                            <small>B.Tech CSE 2025 | Placed at TCS</small>
+                        </div>
                     </div>
                     <div class="testimonial">
+                        <div class="quote-mark">❝</div>
                         <p>
-                            “I loved the dashboard updates. I always knew which documents were still
-                            pending and when decisions were coming from Aditya.”
+                            "The MBA program at Aditya University offers excellent industry exposure. The placement cell is very proactive and I got multiple offers from top companies. Highly recommended!"
                         </p>
-                        <strong>— Daniel K., MBA 2026</strong>
+                        <div class="testimonial-author">
+                            <strong>— Rahul Verma</strong>
+                            <small>MBA 2025 | Placed at Infosys</small>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="quote-mark">❝</div>
+                        <p>
+                            "Great infrastructure, experienced faculty, and vibrant campus life. The hostel facilities are excellent and the campus is very safe. Best decision to join Aditya University!"
+                        </p>
+                        <div class="testimonial-author">
+                            <strong>— Sneha Reddy</strong>
+                            <small>B.Tech ECE 2026</small>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <section class="container" id="faq">
-                <h2 class="section-title">Admissions FAQ</h2>
-                <div class="qa">
-                    <details class="qa-item">
-                        <summary>Is there an application fee?</summary>
-                        <p>Some programs may have a fee. Fee waivers are available for eligible students.</p>
-                    </details>
-                    <details class="qa-item">
-                        <summary>Can I apply to multiple programs?</summary>
-                        <p>Yes. You can apply to more than one program in a single account.</p>
-                    </details>
-                    <details class="qa-item">
-                        <summary>How do I contact admissions?</summary>
-                        <p>Use the contact section below or call the admissions office during business hours.</p>
-                    </details>
+            <!-- FAQ Section -->
+            <section class="faq-section" id="faq">
+                <div class="container">
+                    <div class="faq-header">
+                        <h2 class="section-title">Frequently Asked Questions</h2>
+                        <p class="section-subtitle">Find answers to common questions about admissions, programs, and more</p>
+                    </div>
+                    
+                    <div class="faq-container">
+                        <div class="faq-column">
+                            <details class="faq-item">
+                                <summary>
+                                    <span class="faq-question">What is the eligibility criteria for admission?</span>
+                                    <span class="faq-icon">+</span>
+                                </summary>
+                                <div class="faq-answer">
+                                    <p>For UG programs: 10+2 with 50% marks in relevant subjects. For PG programs: Bachelor's degree with 50% marks. Entrance test may be required for specific programs.</p>
+                                </div>
+                            </details>
+                            
+                            <details class="faq-item">
+                                <summary>
+                                    <span class="faq-question">Is there an application fee?</span>
+                                    <span class="faq-icon">+</span>
+                                </summary>
+                                <div class="faq-answer">
+                                    <p>Yes, there is a nominal application fee of ₹500 (non-refundable). Fee waivers are available for SC/ST/PWD categories as per government norms.</p>
+                                </div>
+                            </details>
+                            
+                            <details class="faq-item">
+                                <summary>
+                                    <span class="faq-question">Can I apply to multiple programs?</span>
+                                    <span class="faq-icon">+</span>
+                                </summary>
+                                <div class="faq-answer">
+                                    <p>Yes, you can apply to multiple programs simultaneously. However, separate application fees apply for each program.</p>
+                                </div>
+                            </details>
+                        </div>
+                        
+                        <div class="faq-column">
+                            <details class="faq-item">
+                                <summary>
+                                    <span class="faq-question">What documents are required for admission?</span>
+                                    <span class="faq-icon">+</span>
+                                </summary>
+                                <div class="faq-answer">
+                                    <p>10th & 12th mark sheets, Transfer Certificate, Migration Certificate, Caste Certificate (if applicable), Aadhar Card, and passport size photographs.</p>
+                                </div>
+                            </details>
+                            
+                            <details class="faq-item">
+                                <summary>
+                                    <span class="faq-question">Are scholarships available?</span>
+                                    <span class="faq-icon">+</span>
+                                </summary>
+                                <div class="faq-answer">
+                                    <p>Yes, we offer merit-based scholarships up to 100% fee waiver. Additionally, government scholarships for SC/ST/OBC/Minority students are also available.</p>
+                                </div>
+                            </details>
+                            
+                            <details class="faq-item">
+                                <summary>
+                                    <span class="faq-question">How do I contact the admissions office?</span>
+                                    <span class="faq-icon">+</span>
+                                </summary>
+                                <div class="faq-answer">
+                                    <p>You can call us at +91-XXXXXXXXXX (Mon-Sat, 9 AM - 5 PM) or email at admissions@aditya.edu.in. You can also visit our campus for in-person consultation.</p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
                 </div>
             </section>
 
             <section class="container" id="apply">
-                <div class="cta">
-                    <div>
-                        <h2 class="section-title">Ready to join Aditya University?</h2>
+                <div class="cta-indian">
+                    <div class="cta-content">
+                        <h2 class="section-title">🎓 Start Your Journey at Aditya University</h2>
                         <p class="section-subtitle">
-                            Create your profile in minutes and submit your application today.
+                            Take the first step towards a successful career. Apply online now!<br>
+                            <strong>Last Date: March 10, 2026</strong>
                         </p>
-                    </div>
-                    <div class="hero-actions">
-                        <a class="button primary" href="profile.html">Create applicant profile</a>
-                        <a class="button ghost" href="#help">Contact admissions</a>
+                        <div class="hero-actions">
+                            <a class="button primary large" href="profile.html">Apply Now - Online Application</a>
+                            <a class="button secondary large" href="#help">Download Prospectus</a>
+                        </div>
+                        <p class="cta-note">📞 For assistance, call: +91-XXXXXXXXXX (Toll Free)</p>
                     </div>
                 </div>
             </section>
@@ -260,35 +632,64 @@
         </main>
 
         <footer class="footer">
-            <div class="container footer-grid">
-                <div>
-                    <div class="brand">
-                        <div class="brand-mark">AU</div>
-                        <div>
-                            <div>Aditya University</div>
-                            <small>Admissions Portal</small>
+            <div class="footer-main">
+                <div class="container footer-grid">
+                    <div class="footer-about">
+                        <div class="brand">
+                            <div class="brand-mark">
+                                <img src="/Frontend/Resources/logo.webp" alt="Aditya University Logo" />
+                            </div>
+                            <div>
+                                <div class="footer-brand-name">Aditya University</div>
+                            </div>
+                        </div>
+                        <p class="footer-desc">A premier institution committed to academic excellence and holistic development. UGC Approved | AICTE Recognized | NAAC 'A++' Grade | Autonomous</p>
+                        <div class="social-links">
+                            <a href="#" title="Facebook">📘</a>
+                            <a href="#" title="Twitter">🐦</a>
+                            <a href="#" title="LinkedIn">💼</a>
+                            <a href="#" title="Instagram">📷</a>
+                            <a href="#" title="YouTube">▶️</a>
                         </div>
                     </div>
-                </div>
-                <div>
-                    <h5>Admissions</h5>
-                    <a href="#process">Admission process</a>
-                    <a href="#programs">Programs</a>
-                    <a href="profile.html">Apply to Aditya</a>
-                </div>
-                <div>
-                    <h5>Support</h5>
-                    <a href="#faq">FAQ</a>
-                    <a href="#contact">Contact us</a>
-                    <a href="Sdash.html">Applicant login</a>
-                </div>
-                <div>
-                    <h5>Legal</h5>
-                    <a href="#">Privacy policy</a>
-                    <a href="#">Terms of service</a>
+                    <div class="footer-links">
+                        <h5>Quick Links</h5>
+                        <a href="#about">About Us</a>
+                        <a href="#programs">Programs Offered</a>
+                        <a href="profile.html">Online Application</a>
+                        <a href="#deadlines">Important Dates</a>
+                        <a href="#campus">Campus Facilities</a>
+                    </div>
+                    <div class="footer-links">
+                        <h5>Admissions</h5>
+                        <a href="#faq">Admission FAQs</a>
+                        <a href="#">Fee Structure</a>
+                        <a href="#">Scholarships</a>
+                        <a href="#">Prospectus PDF</a>
+                        <a href="Sdash.html">Applicant Login</a>
+                    </div>
+                    <div class="footer-links">
+                        <h5>Resources</h5>
+                        <a href="#">Academic Calendar</a>
+                        <a href="#">Examination</a>
+                        <a href="#placements">Placements</a>
+                        <a href="#">Research</a>
+                        <a href="#help">Contact Us</a>
+                    </div>
                 </div>
             </div>
-            <div class="container footer-note" aria-live="polite"></div>
+            <div class="footer-bottom">
+                <div class="container footer-bottom-content">
+                    <div class="footer-note" aria-live="polite">© 2026 Aditya University. All Rights Reserved.</div>
+                    <div class="footer-legal">
+                        <a href="#">Privacy Policy</a>
+                        <span>|</span>
+                        <a href="#">Terms & Conditions</a>
+                        <span>|</span>
+                        <a href="#">Sitemap</a>
+                    </div>
+                </div>
+            </div>
         </footer>
         <script src="main.js"></script>
     </body>

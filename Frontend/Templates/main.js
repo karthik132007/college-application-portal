@@ -127,4 +127,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
         render();
     });
+
+    // Programs Tab Functionality
+    const programTabs = document.querySelectorAll('.program-tab');
+    const programLists = document.querySelectorAll('.program-list');
+
+    programTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            // Remove active class from all tabs
+            programTabs.forEach(t => t.classList.remove('active'));
+            // Add active class to clicked tab
+            tab.classList.add('active');
+
+            // Get the program type from data attribute
+            const programType = tab.getAttribute('data-program');
+
+            // Hide all program lists
+            programLists.forEach(list => list.classList.remove('active'));
+            // Show the selected program list
+            const targetList = document.querySelector(`[data-program-content="${programType}"]`);
+            if (targetList) {
+                targetList.classList.add('active');
+            }
+        });
+    });
 });
