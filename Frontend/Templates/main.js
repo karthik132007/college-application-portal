@@ -127,6 +127,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
         render();
     });
+    const profileForm = document.getElementById('profileForm');
+    if (profileForm) {
+        const passwordInput = profileForm.querySelector('input[name="password"]');
+        const confirmPasswordInput = profileForm.querySelector('input[name="confirmPassword"]');
+        const statusEl = profileForm.querySelector('[data-profile-status]');
+
+        profileForm.addEventListener('submit', (event) => {
+            if (!profileForm.checkValidity()) {
+                return;
+            }
+
+            if (passwordInput && confirmPasswordInput && passwordInput.value !== confirmPasswordInput.value) {
+                event.preventDefault();
+                if (statusEl) {
+                    statusEl.textContent = 'Passwords do not match. Please re-enter them.';
+                }
+                confirmPasswordInput.focus();
+                return;
+            }
+
+            event.preventDefault();
+            if (statusEl) {
+                statusEl.textContent = 'Profile created. Redirecting to the application...';
+            }
+
+            window.location.href = 'apply.html';
+        });
+    }
 
     // Programs Tab Functionality
     const programTabs = document.querySelectorAll('.program-tab');

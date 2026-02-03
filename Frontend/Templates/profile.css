@@ -13,7 +13,12 @@
     max-width: 980px;
     margin: 0 auto;
 }
-
+.form-status {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #2563eb;
+}
 .profile-header {
     display: grid;
     gap: 10px;

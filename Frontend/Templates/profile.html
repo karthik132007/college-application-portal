@@ -48,7 +48,7 @@
                 </div>
 
                 <div class="profile-card">
-                    <form class="form" action="#" method="post">
+                    <form class="form" action="http://localhost:4000/api/users/register" method="post">
                         <div class="row">
                             <label class="field" style="flex: 1; min-width: 220px;">
                                 <span>Full name</span>
@@ -111,7 +111,7 @@
                             </label>
                             <div class="row" style="gap: 10px;">
                                 <button class="button ghost" type="reset">Clear</button>
-                                <a class="button primary" href="apply.html">Create profile & continue</a>
+                                <button class="button primary" type="submit">Create profile & continue</button>
                             </div>
                         </div>
                     </form>
@@ -153,5 +153,6 @@
             </div>
             <div class="container footer-note" aria-live="polite"></div>
         </footer>
+        <script src="profile.js"></script>
     </body>
 </html>
