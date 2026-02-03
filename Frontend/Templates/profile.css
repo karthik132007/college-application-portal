@@ -80,6 +80,13 @@
     align-items: center;
 }
 
+.form-status {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #2563eb;
+}
+
 .profile-note {
     text-align: center;
     color: var(--muted);

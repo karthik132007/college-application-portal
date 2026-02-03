@@ -269,6 +269,68 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    const profileForm = document.getElementById('profileForm');
+    if (profileForm) {
+        const passwordInput = profileForm.querySelector('input[name="password"]');
+        const confirmPasswordInput = profileForm.querySelector('input[name="confirmPassword"]');
+        const statusEl = profileForm.querySelector('[data-profile-status]');
+
+        profileForm.addEventListener('submit', async (event) => {
+            if (!profileForm.checkValidity()) {
+                return;
+            }
+
+            if (passwordInput && confirmPasswordInput && passwordInput.value !== confirmPasswordInput.value) {
+                event.preventDefault();
+                if (statusEl) {
+                    statusEl.textContent = 'Passwords do not match. Please re-enter them.';
+                }
+                confirmPasswordInput.focus();
+                return;
+            }
+
+            event.preventDefault();
+            if (statusEl) {
+                statusEl.textContent = 'Creating profile...';
+            }
+
+            const payload = {
+                fullName: profileForm.fullName?.value?.trim(),
+                email: profileForm.email?.value?.trim(),
+                phone: profileForm.phone?.value?.trim(),
+                password: passwordInput?.value ?? '',
+                stream: profileForm.stream?.value ?? '',
+                program: profileForm.program?.value ?? ''
+            };
+
+            try {
+                const response = await fetch('/api/profiles', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) {
+                    const data = await response.json().catch(() => ({}));
+                    const message = data?.message || 'Unable to create profile. Please try again.';
+                    if (statusEl) {
+                        statusEl.textContent = message;
+                    }
+                    return;
+                }
+
+                if (statusEl) {
+                    statusEl.textContent = 'Profile created. Redirecting to the application...';
+                }
+                window.location.href = 'apply.html';
+            } catch (error) {
+                if (statusEl) {
+                    statusEl.textContent = 'Network error. Please try again.';
+                }
+            }
+        });
+    }
+
     // Hostel Service Toggle
     const hostelYes = document.getElementById('hostelYes');
     const hostelNo = document.getElementById('hostelNo');
