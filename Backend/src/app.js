@@ -14,7 +14,7 @@ app.use('/api/users', userRoutes);
 
 // Health check
 app.get('/api/health', (req, res) => {
-	res.json({ status: 'OK', message: 'Server is running' });
+	res.send("Its running");
 });
 
 export default app;
