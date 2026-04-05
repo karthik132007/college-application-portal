@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Aditya University | Admin Login</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="styles.css" />
+        <link rel="stylesheet" href="profile.css" />
+    </head>
+    <body style="background-color: #f8fafc;">
+        <header class="nav">
+            <div class="container nav-inner">
+                <div class="brand">
+                    <img src="/Frontend/Resources/logo.webp" alt="Aditya University" class="brand-logo">
+                    <div>
+                        <div style="font-weight: 700; color: #0f172a; font-size: 1.1rem;">Aditya University</div>
+                        <small style="color: #64748b;">Admin Portal</small>
+                    </div>
+                </div>
+                <div class="nav-actions">
+                    <a class="button ghost" href="index.html">Back to Site</a>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="container profile" style="margin-top: 80px;">
+                <div class="profile-header">
+                    <div>
+                        <h2 class="section-title">Admin Login</h2>
+                        <p class="section-subtitle">
+                            Access the administration dashboard.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="profile-card">
+                    <form class="form" id="adminLoginForm">
+                        <div class="row">
+                            <label class="field" style="flex: 1; min-width: 220px;">
+                                <span>Admin Username</span>
+                                <input type="text" name="username" placeholder="admin" required />
+                            </label>
+                        </div>
+
+                        <div class="row">
+                            <label class="field" style="flex: 1; min-width: 220px;">
+                                <span>Password</span>
+                                <input type="password" name="password" placeholder="admin123" required />
+                            </label>
+                        </div>
+
+                        <div class="row" style="justify-content: flex-end;">
+                            <button class="button primary" type="submit">Log In Securely</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <script src="admin-login.js"></script>
+    </body>
+</html>

@@ -32,7 +32,7 @@
 				</nav>
 				<div class="nav-actions">
 					<a class="button ghost" href="index.html">Home</a>
-					<a class="button primary" href="profile.html">New application</a>
+					<button class="button primary" id="logoutBtnSdash">Log Out</button>
 				</div>
 			</div>
 		</header>
@@ -106,9 +106,20 @@
 
 					<div class="dashboard-card">
 						<h3 class="card-title">Important Dates</h3>
-						<div id="deadlineList" class="timeline-mini">
+						<div id="studentDatesList" class="timeline-mini">
 							<div class="empty-state">
-								<p class="muted">No upcoming deadlines</p>
+								<p class="muted">Loading important dates...</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- New Grid row for Entrance Exam -->
+				<div class="dashboard-grid">
+					<div class="dashboard-card" id="exam-card">
+						<h3 class="card-title">Entrance Exam</h3>
+						<div id="examContainer" style="padding: 0.5rem 0;">
+							<div class="empty-state">
+								<p class="muted">Loading exam details...</p>
 							</div>
 						</div>
 					</div>
@@ -117,31 +128,21 @@
 				<div class="dashboard-grid">
 					<div class="dashboard-card" id="documents">
 						<div class="card-header">
-							<h3 class="card-title">Required Documents</h3>
-							<a href="#upload" class="text-link">Upload Files</a>
+							<h3 class="card-title">Submitted Documents</h3>
 						</div>
-						<div id="docList" class="doc-list">
-							<div class="doc-item">
-								<div class="doc-info">
-									<strong>Identity Proof</strong>
-									<span class="doc-status pending">Required</span>
-								</div>
-								<span class="muted">Aadhaar / Passport / Driving License</span>
-							</div>
-							<div class="doc-item">
-								<div class="doc-info">
-									<strong>Academic Transcripts</strong>
-									<span class="doc-status pending">Required</span>
-								</div>
-								<span class="muted">Class 10 & 12 Marksheets</span>
-							</div>
-							<div class="doc-item">
-								<div class="doc-info">
-									<strong>Passport Photo</strong>
-									<span class="doc-status pending">Required</span>
-								</div>
-								<span class="muted">Recent passport size photograph</span>
-							</div>
+                        <div id="docList" style="padding: 20px; text-align: center;">
+							<p class="muted" style="margin-bottom: 10px;">Your documents are accessed via the secure link you provided.</p>
+                            <div id="studentDriveLinkContainer" style="padding: 15px; background: #f0fdf4; border: 1px dashed #86efac; border-radius: 8px; display: inline-block; word-break: break-all; margin-bottom: 10px;">
+                                <a id="studentDriveLinkAnchor" href="#" target="_blank" style="color: #166534; font-weight: 500; text-decoration: underline;">Link will appear here</a>
+                            </div>
+
+                            <div style="margin-top: 15px; border-top: 1px solid #e2e8f0; padding-top: 15px;">
+                                <p style="font-size: 0.85rem; color: #475569; margin-bottom: 8px; font-weight: 500;">Need to add or update your document link?</p>
+                                <div style="display: flex; gap: 10px; justify-content: center; align-items: center; flex-wrap: wrap;">
+                                    <input type="url" id="updateDriveLinkInput" placeholder="https://drive.google.com/..." style="padding: 0.5rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.85rem; width: 100%; max-width: 300px;">
+                                    <button class="button primary" id="btnUpdateDriveLink" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Update Link</button>
+                                </div>
+                            </div>
 						</div>
 					</div>
 
@@ -189,5 +190,6 @@
             </div>
             <div class="container footer-note" aria-live="polite"></div>
         </footer>
+		<script src="sdash.js"></script>
 	</body>
 </html>

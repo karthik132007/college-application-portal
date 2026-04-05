@@ -53,7 +53,7 @@
 						<span class="pill soft">Step 1 of 4</span>
 					</div>
 
-					<form class="form" action="#" method="post">
+					<form class="form" id="applicationForm" action="#" method="post">
 						<div class="row">
 							<label class="field" style="flex: 1; min-width: 220px;">
 								<span>First name</span>
@@ -200,7 +200,7 @@
 						<div class="row">
 							<label class="field" style="flex: 1; min-width: 260px;">
 								<span>College name</span>
-								<input type="text" name="College" placeholder="Class 12 College Name" required />
+								<input type="text" name="college" placeholder="Class 12 College Name" required />
 							</label>
 							<label class="field" style="flex: 1; min-width: 220px;">
 								<span>Board / University</span>
@@ -253,13 +253,10 @@
 						</div>
 
 						<div class="row">
-							<label class="field" style="flex: 1; min-width: 260px;">
-								<span>Identity proof (PDF/JPG)</span>
-								<input type="file" name="idProof" accept=".pdf,.jpg,.jpeg,.png" />
-							</label>
-							<label class="field" style="flex: 1; min-width: 260px;">
-								<span>Academic transcripts</span>
-								<input type="file" name="transcripts" accept=".pdf,.jpg,.jpeg,.png" />
+							<label class="field" style="flex: 1;">
+								<span>Documents Link (Google Drive, OneDrive, etc.) (Optional right now)</span>
+								<input type="url" name="driveLink" placeholder="https://drive.google.com/drive/folders/..." />
+                                <small class="muted" style="margin-top: 4px; display: block;">Create a single folder containing your ID Proof, Transcripts, and Photo. Ensure the link access is set to "Anyone with the link". You can also add this later from your dashboard.</small>
 							</label>
 						</div>
 
@@ -310,5 +307,6 @@
             </div>
             <div class="container footer-note" aria-live="polite"></div>
         </footer>
+		<script src="apply.js"></script>
 	</body>
 </html>

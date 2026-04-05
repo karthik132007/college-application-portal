@@ -1,4 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
+    const userId = localStorage.getItem('userId');
+    const userRole = localStorage.getItem('userRole');
+    const navActions = document.querySelector('.nav-actions');
+
+    if (userId && navActions) {
+        // User is logged in
+        const dashLink = userRole === 'admin' ? 'admin-dashboard.html' : 'Sdash.html';
+        navActions.innerHTML = `
+            <a class="button secondary" href="${dashLink}">Dashboard</a>
+            <button class="button primary" id="logoutBtnMain">Log Out</button>
+        `;
+
+        document.getElementById('logoutBtnMain').addEventListener('click', () => {
+            localStorage.clear();
+            window.location.href = 'index.html';
+        });
+    }
     const year = new Date().getFullYear();
     const footer = document.querySelector(".footer");
     if (!footer) {

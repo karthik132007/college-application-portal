@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Aditya University | Log In</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="styles.css" />
+        <link rel="stylesheet" href="profile.css" />
+    </head>
+    <body>
+        <header class="nav">
+            <div class="container nav-inner">
+                <div class="brand">
+                    <img src="/Frontend/Resources/logo.webp" alt="Aditya University" class="brand-logo">
+                    <div>
+                        <div></div>
+                        <small></small>
+                    </div>
+                </div>
+                <nav class="nav-links">
+                    <a href="index.html#portal">Portal</a>
+                    <a href="index.html#programs">Programs</a>
+                    <a href="index.html#deadlines">Deadlines</a>
+                    <a href="index.html#help">Help</a>
+                </nav>
+                <div class="nav-actions">
+                    <a class="button ghost" href="index.html">Back to portal</a>
+                    <a class="button primary" href="profile.html">Create profile</a>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="container profile">
+                <div class="profile-header">
+                    <div>
+                        <h2 class="section-title">Log in to dashboard</h2>
+                        <p class="section-subtitle">
+                            Access your applicant dashboard.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="profile-card">
+                    <form class="form" action="http://localhost:4000/api/users/login" method="post" id="loginForm">
+                        <div class="row">
+                            <label class="field" style="flex: 1; min-width: 220px;">
+                                <span>Email address</span>
+                                <input type="email" name="email" placeholder="you@example.com" required />
+                            </label>
+                        </div>
+
+                        <div class="row">
+                            <label class="field" style="flex: 1; min-width: 220px;">
+                                <span>Password</span>
+                                <input type="password" name="password" placeholder="Enter your password" required />
+                            </label>
+                        </div>
+
+                        <div class="row" style="justify-content: flex-end;">
+                            <button class="button primary" type="submit">Log In</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="profile-note">
+                    Don't have a profile yet? <a href="profile.html">Create one →</a>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="container footer-grid">
+                <div>
+                    <div class="brand">
+                        <img src="/Frontend/Resources/logo.webp" alt="Aditya University" class="brand-logo">
+                        <div>
+                            <div>Aditya University</div>
+                            <small>Admissions Portal</small>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h5>Admissions</h5>
+                    <a href="index.html#programs">Programs</a>
+                    <a href="index.html#deadlines">Deadlines</a>
+                    <a href="apply.html">Apply</a>
+                </div>
+                <div>
+                    <h5>Support</h5>
+                    <a href="index.html#faq">FAQ</a>
+                    <a href="index.html#help">Contact us</a>
+                </div>
+                <div>
+                    <h5>Legal</h5>
+                    <a href="#">Privacy policy</a>
+                    <a href="#">Terms of service</a>
+                </div>
+            </div>
+            <div class="container footer-note" aria-live="polite"></div>
+        </footer>
+        <script src="login.js"></script>
+    </body>
+</html>
